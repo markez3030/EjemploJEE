@@ -1,0 +1,13 @@
+/build/
+################################
+# FICHEROS IGNORADOS POR GIT
+
+###########################
+
+#CLASES COMPILADAS DE JAVA 
+
+#CONFIGURACION DE ECLIPSE
+
+/.classpath
+
+/.project
