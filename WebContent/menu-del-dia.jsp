@@ -1,4 +1,4 @@
-<%@page import="com.ipartek.formacion.ejecicioReceta.pojo.Receta"%>
+<%@page import="com.ipartek.formacion.recetas.pojo.Receta"%>
 
 <a href="index.jsp">Volver Inicio</a>
 
