@@ -1,6 +1,6 @@
-<%@page import="com.ipartek.formacion.recetas.pojo.Receta"%>
+<%@page import="com.ipartek.formacion.ejercicioRecetas.pojo.Receta"%>
 
-<a href="index.jsp">Volver Inicio</a>
+<a href="indexReceta.jsp">Volver Inicio</a>
 
 
 <%

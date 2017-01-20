@@ -3,30 +3,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Web Recetas</title>
+<title>Primer Ejemplo Controlado</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Theme CSS -->
-<link href="css/freelancer.min.css" rel="stylesheet">
+<link href="../css/freelancer.min.css" rel="stylesheet">
 
 <!-- Custom -->
-<link href="css/custom.css" rel="stylesheet">
+<link href="../css/custom.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
-	
-<link href="css/estiloIndex.css"
-	rel="stylesheet" type="text/css">
-	
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
 	rel="stylesheet" type="text/css">
 <link
@@ -44,14 +40,35 @@
 </head>
 <body>
 
-<h1>Listado de ejercicios</h1>
-<div class="anchuraDivIndex">
-	<ul class="list-group " >
-		<li class="list-group-item list-group-item-success"><a href="ejercicioReceta/indexReceta.jsp"><strong>1.-Ejercicio	Recetas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Ejercicio receta que saca un menú del dia)</strong></a></li>
-		<li class="list-group-item list-group-item-info"><a href="ejercicioSaludo/indexSaludo.jsp"><strong>2.-Controlador o Servlet [GET y POST]</strong></a></li>
-		<li class="list-group-item list-group-item-warning"><a href="ejercicioCalculadora/indexCalculadora.jsp"><strong>3.-Calculadora (Metes un precio y te saca el IVA)</strong></a></li>
-		<li class="list-group-item list-group-item-danger">Fourth item</li>
-	</ul>
-</div>
+	<section> 
+	<article class="anchuraDivIndex">
+	<h4>Peticion POST realizado con un formulario</h4>
+	<form action="saludo" method="POST">
+		<div class="form-group">
+			<label for="precio">Precio</label> <input type="text"
+				class="form-control" name="precio" id="precio"
+				placeholder="Introduzca el precio en â‚¬">
+		</div>
+		<div class="form-group">
+			<label for="iva">IVA </label> <input type="text"
+				class="form-control" name="iva" id="iva"
+				placeholder="Introduzca el iva a aplicar">
+		</div>
+		<div class="form-group">
+			<label for="apellido2">Precio con IVA </label> 
+			<input type="text" class="form-control" name="precioConIva"
+			
+			<%
+				if(request.getAttribute("precioIVA")!=null)
+					out.print("value='"+request.getAttribute("precioIVA")+"'");
+			%>
+			readonly/>
+		</div>
+
+		<button type="submit" class="btn btn-primary">Calcular</button>
+	</form>
+	</article></section>
+
+
 </body>
 </html>

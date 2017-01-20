@@ -1,4 +1,4 @@
-package com.ipartek.formacion.recetas.pojo;
+package com.ipartek.formacion.ejercicioRecetas.pojo;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

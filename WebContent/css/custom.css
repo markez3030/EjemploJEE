@@ -4,3 +4,42 @@
 	width: 256px;
 	height: 256px;
 }
+
+
+.anchuraDivIndex
+{
+	width: 50%;
+}
+
+--> Todo enlace que este en una lista en el id about
+#about ul a {
+	
+	
+}
+
+section{
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
+section article{
+
+	margin-top:50px;
+	
+}
+
+body{
+	margin-left: 20px;
+	margin-right: 20px;
+
+}
+
+div#imagenGetPost
+{
+	width:40%;
+	height:40%;
+	float:right;
+	border: 0px solid;
+    border-radius: 25px;
+	
+}

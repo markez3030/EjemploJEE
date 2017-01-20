@@ -1,9 +1,9 @@
-package com.ipartek.formacion.recetas.ejercicios;
+package com.ipartek.formacion.ejercicioRecetas.main;
 
 import java.util.ArrayList;
 
-import com.ipartek.formacion.recetas.pojo.Ingrediente;
-import com.ipartek.formacion.recetas.pojo.Receta;
+import com.ipartek.formacion.ejercicioRecetas.pojo.Ingrediente;
+import com.ipartek.formacion.ejercicioRecetas.pojo.Receta;
 
 public class RecetaMarmitako {
 
