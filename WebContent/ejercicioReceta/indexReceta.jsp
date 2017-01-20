@@ -76,7 +76,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive logo-home" src="img/profile.png" alt="logotipo de Web Recetas">
+                    <img class="img-responsive logo-home" src="../img/profile.png" alt="logotipo de Web Recetas">
                     <div class="intro-text">
                         <span class="name">Komilones App</span>
                         <hr class="star-light">

@@ -47,7 +47,7 @@
 <h1>Listado de ejercicios</h1>
 <div class="anchuraDivIndex">
 	<ul class="list-group " >
-		<li class="list-group-item list-group-item-success"><a href="ejercicioReceta/indexReceta.jsp"><strong>Ejercicio	Recetas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Ejercicio receta que saca un men? del dia)</strong></a></li>
+		<li class="list-group-item list-group-item-success"><a href="ejercicioReceta/indexReceta.jsp"><strong>Ejercicio	Recetas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Ejercicio receta que saca un menú del dia)</strong></a></li>
 		<li class="list-group-item list-group-item-info">Second item</li>
 		<li class="list-group-item list-group-item-warning">Third item</li>
 		<li class="list-group-item list-group-item-danger">Fourth item</li>
