@@ -1,45 +1,41 @@
 /* Nuestro CSS para no tener que cambiar los otros */
-
-.logo-home{
+.logo-home {
 	width: 256px;
 	height: 256px;
 }
 
-
-.anchuraDivIndex
-{
+.anchuraDivIndex {
 	width: 50%;
 }
 
---> Todo enlace que este en una lista en el id about
+-->
+Todo enlace que este en una lista en el id about
 #about ul a {
-	
 	
 }
 
-section{
+section {
 	margin-top: 0px;
 	padding-top: 0px;
 }
 
-section article{
-
-	margin-top:50px;
-	
+section article {
+	margin-top: 50px;
 }
 
-body{
+body {
 	margin-left: 20px;
 	margin-right: 20px;
-
 }
 
-div#imagenGetPost
-{
-	width:40%;
-	height:40%;
-	float:right;
-	border: 0px solid;
-    border-radius: 25px;
-	
+div#imagenGetPost {
+	width: 40%;
+	height: 40%;
+	float: right;
+}
+
+#impresionDatos {
+	float: right;
+	width: 40%;
+	height: 40%;
 }

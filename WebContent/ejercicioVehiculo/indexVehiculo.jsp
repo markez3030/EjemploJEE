@@ -49,23 +49,40 @@
 	</article> <article>
 	<h1>Ejercicio Vehiculo</h1>
 	<p>
-		Ejercicio en el que se crea un vehiculo con los parametros: <br/>
-		Modelo,plazas,potencia y dimensiones.<br/>
-		Si el vehiculo tiene la potencia, la dimension o las plazas negativas,<br/>
-		No se creara el vehiculo y se mostrara un mensaje de error<br/>
-		Si esta todo bien, se crea el vehiculo y se muestra por pantalla.<br/>
-		
-
-		Mapping del Servlet:<b>/ejercicioVehiculo/vehiculo</b><br />
+		Ejercicio en el que se crea un vehiculo con los parametros: <br />
+		Modelo,plazas,potencia y dimensiones.<br /> Si el vehiculo tiene la
+		potencia, la dimension o las plazas negativas,<br /> No se creara el
+		vehiculo y se mostrara un mensaje de error<br /> Si esta todo bien, se
+		crea el vehiculo y se muestra por pantalla.<br /> Mapping del Servlet:<b>/ejercicioVehiculo/vehiculo</b><br />
 	</p>
 
-
-
-	</article> <article>
+	<article id="impresionDatos"> <%
+ 	Vehiculo vehiculo = (Vehiculo) request.getAttribute("vehiculo");
+ 	if (request.getAttribute("error") != null) {
+ %>
+	<div class="alert alert-warning alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert"
+			aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+		<strong>Error!</strong>${error}
+	</div>
+	<%
+		} else if (vehiculo != null) {
+	%>
+	<div class="alert alert-success" role="alert">El vehiculo ha sido
+		creado de manera correcta</div>
+	<%
+		out.println("<p><b>Modelo:</b> " + vehiculo.getModelo() + "</p>");
+			out.println("<p><b>Plazas:</b> " + vehiculo.getPlazas() + "</p>");
+			out.println("<p><b>Dimensiones:</b> " + vehiculo.getDimensiones() + "</p>");
+			out.println("<p><b>Potencia:</b> " + vehiculo.getPotencia() + " CV</p>");
+		}
+	%> </article> <article class="anchuraDivIndex">
 	<form action="vehiculo" method="POST">
 		<div class="form-group">
 			<label for="modelo">Modelo</label> <input type="text"
-				class="form-control" name="modelo" id="modelo"
+				class="form-control" size="15" name="modelo" id="modelo"
 				placeholder="Introduzca el modelo" required>
 		</div>
 		<div class="form-group">
@@ -86,29 +103,7 @@
 
 		<button type="submit" class="btn btn-primary">Enviar</button>
 	</form>
-	</article> <article> <%
- 	Vehiculo vehiculo = (Vehiculo) request.getAttribute("vehiculo");
- 	if (request.getAttribute("error") != null) {
- %>
-	<div class="alert alert-warning alert-dismissible" role="alert">
-		<button type="button" class="close" data-dismiss="alert"
-			aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		</button>
-		<strong>Error!</strong>${error}
-	</div>
-	<%
-		} else if (vehiculo != null) {
-	%>
-	<div class="alert alert-success" role="alert">El vehiculo ha sido
-		creado de manera correcta</div>
-	<%
-		out.println("<p><b>Modelo:</b> " + vehiculo.getModelo() + "</p>");
-			out.println("<p><b>Plazas:</b> " + vehiculo.getPlazas() + "</p>");
-			out.println("<p><b>Dimensiones:</b> " + vehiculo.getDimensiones() + "</p>");
-			out.println("<p><b>Potencia:</b> " + vehiculo.getPotencia() + "</p>");
-		}
-	%> </article> </section>
+	</article> </section>
 
 
 </body>
