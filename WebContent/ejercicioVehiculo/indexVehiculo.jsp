@@ -65,5 +65,4 @@
 	</form>
 	</article> </section>
 	
-	
 <%@ include file="/layout/footer.jsp" %>
