@@ -1,5 +1,6 @@
 package com.ipartek.formacion.ejercicioVehiculo.pojo;
 
+import com.ipartek.formacion.ejercicioVehiculo.exception.NumeroNegativoException;
 
 public class Vehiculo {
 
@@ -33,7 +34,10 @@ public class Vehiculo {
 		return plazas;
 	}
 
-	public void setPlazas(int plazas) {
+	public void setPlazas(int plazas) throws NumeroNegativoException {
+		if(plazas<2)
+			throw new NumeroNegativoException("El numero de plazas tiene que ser mayor que 2");
+		else
 		this.plazas = plazas;
 	}
 
@@ -41,16 +45,22 @@ public class Vehiculo {
 		return dimensiones;
 	}
 
-	public void setDimensiones(float dimensiones) {
-		this.dimensiones = dimensiones;
+	public void setDimensiones(float dimensiones) throws NumeroNegativoException {
+		if(dimensiones<0)
+			throw new NumeroNegativoException("La dimension que ser mayor que 0");
+		else
+			this.dimensiones = dimensiones;
 	}
 
 	public float getPotencia() {
 		return potencia;
 	}
 
-	public void setPotencia(float potencia) {
-		this.potencia = potencia;
+	public void setPotencia(float potencia) throws NumeroNegativoException {
+		if(potencia<0)
+			throw new NumeroNegativoException("La potencia tiene que ser mayor que 0");
+		else
+			this.potencia = potencia;
 	}
 
 	@Override

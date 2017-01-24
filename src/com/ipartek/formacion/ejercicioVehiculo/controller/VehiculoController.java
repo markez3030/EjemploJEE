@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ipartek.formacion.ejercicioVehiculo.exception.NumeroDePasajerosException;
+import com.ipartek.formacion.ejercicioVehiculo.exception.NumeroNegativoException;
 import com.ipartek.formacion.ejercicioVehiculo.pojo.Vehiculo;
 
 /**
@@ -35,8 +35,7 @@ public class VehiculoController extends HttpServlet {
 		// TODO Auto-generated method stub
 		doPost(request, response);
 	}
-	
-	
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
@@ -46,30 +45,21 @@ public class VehiculoController extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		try {
-			request.setAttribute("modelo", request.getParameter("modelo"));
-			if (Integer.parseInt(request.getParameter("plazas")) < 0) {
-				throw new NumeroDePasajerosException("El numero de plazas tiene que ser mayor que 0");
-			}
-			if (Integer.parseInt(request.getParameter("dimensiones")) < 0) {
-				throw new NumeroDePasajerosException("La dimension que ser mayor que 0");
-			}
-			if (Integer.parseInt( request.getParameter("potencia")) < 0) {
-				throw new NumeroDePasajerosException("La potencia tiene que ser mayor que 0");
-			}
-			Vehiculo vehiculo=new Vehiculo();
+			Vehiculo vehiculo = new Vehiculo();
 			vehiculo.setModelo(request.getParameter("modelo"));
 			vehiculo.setPlazas(Integer.parseInt(request.getParameter("plazas")));
 			vehiculo.setDimensiones(Float.parseFloat(request.getParameter("dimensiones")));
 			vehiculo.setPotencia(Float.parseFloat(request.getParameter("potencia")));
-			request.setAttribute("vehiculo",vehiculo);
+			request.setAttribute("vehiculo", vehiculo);
+		} catch (NumberFormatException e1) {
+			request.setAttribute("error", "Ha introducido texto en un campo númerico");
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			request.setAttribute("error", e.getMessage());
-		}finally
-		{
+		} finally {
 			request.getRequestDispatcher("indexVehiculo.jsp").forward(request, response);
 		}
-
 
 	}
 

@@ -49,8 +49,8 @@
 	<ul class="list-group " >
 		<li class="list-group-item list-group-item-success"><a href="ejercicioReceta/indexReceta.jsp"><strong>1.-Ejercicio	Recetas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Ejercicio receta que saca un menú del dia)</strong></a></li>
 		<li class="list-group-item list-group-item-info"><a href="ejercicioSaludo/indexSaludo.jsp"><strong>2.-Controlador o Servlet [GET y POST]</strong></a></li>
-		<li class="list-group-item list-group-item-warning"><a href="ejercicioCalculadora/indexCalculadora.jsp"><strong>3.-Calculadora (Metes un precio y te saca el IVA)</strong></a></li>
-		<li class="list-group-item list-group-item-danger"><a href="ejercicioVehiculo/indexVehiculo.jsp"><strong>3.-Vehiculo (Se crea un vehiculo. Si el valor numerico es negativo lanza excepcion)</strong></a></li>
+		<li class="list-group-item list-group-item-warning"><a href="ejercicioVehiculo/indexVehiculo.jsp"><strong>3.-Vehiculo (Se crea un vehiculo. Si el valor numerico es negativo lanza excepcion)</strong></a></li>
+		<li class="list-group-item list-group-item-danger"></li>
 	</ul>
 </div>
 </body>

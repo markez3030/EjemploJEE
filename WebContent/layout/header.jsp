@@ -1,3 +1,6 @@
+<%@page import="com.ipartek.formacion.ejercicioVehiculo.pojo.Vehiculo"%>
+<%@page import="com.ipartek.formacion.ejecicioReceta.pojo.Receta"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -16,6 +19,9 @@
 
 <!-- Theme CSS -->
 <link href="../css/freelancer.min.css" rel="stylesheet">
+
+<!-- Font-awesome -->
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 <!-- Custom -->
 <link href="../css/custom.css" rel="stylesheet">
@@ -39,36 +45,3 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<section> 
-	<article class="anchuraDivIndex">
-	<h4>Peticion POST realizado con un formulario</h4>
-	<form action="saludo" method="POST">
-		<div class="form-group">
-			<label for="precio">Precio</label> <input type="text"
-				class="form-control" name="precio" id="precio"
-				placeholder="Introduzca el precio en €">
-		</div>
-		<div class="form-group">
-			<label for="iva">IVA </label> <input type="text"
-				class="form-control" name="iva" id="iva"
-				placeholder="Introduzca el iva a aplicar">
-		</div>
-		<div class="form-group">
-			<label for="apellido2">Precio con IVA </label> 
-			<input type="text" class="form-control" name="precioConIva"
-			
-			<%
-				if(request.getAttribute("precioIVA")!=null)
-					out.print("value='"+request.getAttribute("precioIVA")+"'");
-			%>
-			readonly/>
-		</div>
-
-		<button type="submit" class="btn btn-primary">Calcular</button>
-	</form>
-	</article></section>
-
-
-</body>
-</html>
