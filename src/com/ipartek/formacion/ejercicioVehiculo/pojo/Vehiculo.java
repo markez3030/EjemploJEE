@@ -1,9 +1,18 @@
 package com.ipartek.formacion.ejercicioVehiculo.pojo;
 
+import java.io.Serializable;
+
 import com.ipartek.formacion.ejercicioVehiculo.exception.NumeroNegativoException;
 
-public class Vehiculo {
+public class Vehiculo implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private static int numero_coches=0;
+	private float id;
 	private String modelo;
 	private int plazas;
 	private float dimensiones;
@@ -15,11 +24,15 @@ public class Vehiculo {
 		this.plazas = 1;
 		this.dimensiones = 0;
 		this.potencia = 100;
+		numero_coches+=1;
+		this.setId(numero_coches);
 	}
 
 	public Vehiculo(String modelo) {
-		this();
+		super();
 		this.modelo = modelo;
+		numero_coches=numero_coches+1;
+		this.setId(numero_coches);
 	}
 
 	public String getModelo() {
@@ -63,12 +76,29 @@ public class Vehiculo {
 			this.potencia = potencia;
 	}
 
+	
+	public static int getNumero_coches() {
+		return numero_coches;
+	}
+
+	public static void setNumero_coches(int numero_coches) {
+		Vehiculo.numero_coches = numero_coches;
+	}
+	
+
+	public float getId() {
+		return id;
+	}
+
+	public void setId(float id) {
+		this.id = id;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Vehiculo [modelo=" + modelo + ", plazas=" + plazas + ", dimensiones=" + dimensiones + ", potencia="
 				+ potencia + "]";
 	}
-
-	
 
 }

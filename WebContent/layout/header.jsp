@@ -3,6 +3,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@page errorPage="../error.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,20 +21,18 @@
 <!-- Theme CSS -->
 <link href="../css/freelancer.min.css" rel="stylesheet">
 
-<!-- Font-awesome -->
-<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-
-<!-- Custom -->
 <link href="../css/custom.css" rel="stylesheet">
 
-<!-- Custom Fonts -->
-<link href="vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-	rel="stylesheet" type="text/css">
-<link
-	href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
-	rel="stylesheet" type="text/css">
+<!-- Custom -->
+<link href="../css/error.css" rel="stylesheet">
+
+<!-- Login -->
+<link href="../css/login.css" rel="stylesheet">
+
+ <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,3 +44,4 @@
 <title>Insert title here</title>
 </head>
 <body>
+

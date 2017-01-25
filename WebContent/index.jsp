@@ -46,11 +46,11 @@
 
 <h1>Listado de ejercicios</h1>
 <div class="anchuraDivIndex">
-	<ul class="list-group " >
+	<ul class="list-group">
 		<li class="list-group-item list-group-item-success"><a href="ejercicioReceta/indexReceta.jsp"><strong>1.-Ejercicio	Recetas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Ejercicio receta que saca un menú del dia)</strong></a></li>
-		<li class="list-group-item list-group-item-info"><a href="ejercicioSaludo/indexSaludo.jsp"><strong>2.-Controlador o Servlet [GET y POST]</strong></a></li>
-		<li class="list-group-item list-group-item-warning"><a href="ejercicioVehiculo/indexVehiculo.jsp"><strong>3.-Vehiculo (Se crea un vehiculo. Si el valor numerico es negativo lanza excepcion)</strong></a></li>
-		<li class="list-group-item list-group-item-danger"></li>
+		<li class="list-group-item list-group-item-info"><a href="ejercicioSaludo/saludo"><strong>2.-Controlador o Servlet [GET y POST]</strong></a></li>
+		<li class="list-group-item list-group-item-warning"><a href="ejercicioVehiculo/vehiculo"><strong>3.-Vehiculo (Se crea un vehiculo. Si el valor numerico es negativo lanza excepcion)</strong></a></li>
+		<%@include file="layout/userLogin.jsp" %>
 	</ul>
 </div>
 </body>
