@@ -1,48 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<title>Web Recetas</title>
-
-<!-- Bootstrap Core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Theme CSS -->
-<link href="css/freelancer.min.css" rel="stylesheet">
-
-<!-- Custom -->
-<link href="css/custom.css" rel="stylesheet">
-
-<!-- Custom Fonts -->
-<link href="vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-	
-<link href="css/estiloIndex.css"
-	rel="stylesheet" type="text/css">
-	
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-	rel="stylesheet" type="text/css">
-<link
-	href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
-	rel="stylesheet" type="text/css">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ include file="/layout/header.jsp"%>
 
 <h1>Listado de ejercicios</h1>
 <div class="anchuraDivIndex">
@@ -51,7 +7,10 @@
 		<li class="list-group-item list-group-item-info"><a href="ejercicioSaludo/saludo"><strong>2.-Controlador o Servlet [GET y POST]</strong></a></li>
 		<li class="list-group-item list-group-item-warning"><a href="ejercicioVehiculo/vehiculo"><strong>3.-Vehiculo (Se crea un vehiculo. Si el valor numerico es negativo lanza excepcion)</strong></a></li>
 		<%@include file="layout/userLogin.jsp" %>
+		<li class="list-group-item list-group-item-success"><a href="ejercicioXXX/pagina-no-existe-404.jsp"><strong>5.-Gestion de error 404</strong></a></li>
+		<li class="list-group-item list-group-item-info"><a href="controladorException?p=1"><strong>6.-Gestion de error 500</strong></a></li>
+		<li class="list-group-item list-group-item-warning"><a href="controladorException?p=2"><strong>7.-Gestion de error VehiculoException</strong></a></li>
+		<li class="list-group-item list-group-item-danger"><a href="ejercicioCRUDVehiculo/vehiculo">8.-CRUD vehiculo</a></li>
 	</ul>
 </div>
-</body>
-</html>
+<%@ include file="/layout/footer.jsp"%>

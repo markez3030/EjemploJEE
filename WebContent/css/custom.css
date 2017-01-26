@@ -39,6 +39,12 @@ div#imagenGetPost {
 	width: 40%;
 	height: 40%;
 }
+#impresionDatos2 {
+    float: left;
+	width: 40%;
+	height: 40%;
+	margin-top:49px;
+}
 
 img.imagenUsuario {
 	width: 30px;
@@ -54,10 +60,10 @@ img.imagenUsuario {
   overflow:hidden;
 }
 .bgvid{
-  position:absolute;
-  left:0;
-  top:0;
-  width:100vw;
+
+float:left;
+margin:0px;
+padding: 0px;
 }
 .inner-container{
   width:400px;

@@ -15,7 +15,7 @@ import com.ipartek.formacion.ejercicioLogin.pojo.User;
 /**
  * Servlet implementation class LoginController
  */
-@WebServlet(urlPatterns = { "/ejercicioLogin/login" }, initParams = {
+@WebServlet(urlPatterns = { "/login" }, initParams = {
 		@WebInitParam(name = "userNameCredential", value = "admin"),
 		@WebInitParam(name = "userPassCredential", value = "123"),
 		@WebInitParam(name = "userImage", value = "http://pre10.deviantart.net/cfcd/th/pre/i/2004/03/2/8/rolling_stone_bart.jpg") })
@@ -43,7 +43,7 @@ public class LoginController extends HttpServlet {
 				session.setAttribute("user", nombre);
 				session.setAttribute("pass", pass);
 				session.setAttribute("image", getInitParameter("userImage"));
-				ruta="../index.jsp";
+				ruta="index.jsp";
 			}
 		} catch (Exception e) {
 			response.sendRedirect("../error.jsp");

@@ -13,8 +13,8 @@ import com.ipartek.formacion.ejercicioVehiculo.pojo.Vehiculo;
 /**
  * Servlet implementation class VehiculoController
  */
-@WebServlet("/ejercicioChorra")
-public class VehiculoController2 extends HttpServlet {
+@WebServlet("/ejercicioVehiculo/vehiculo")
+public class VehiculoController extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -44,8 +44,8 @@ public class VehiculoController2 extends HttpServlet {
 			vehiculo.setPotencia(Float.parseFloat(request.getParameter("potencia")));
 			request.setAttribute("vehiculo", vehiculo);
 		} catch (NumberFormatException e1) {
-			request.setAttribute("error", "Ha introducido texto en un campo númerico");
-
+			if(request.getParameter("modelo")!=null)
+				request.setAttribute("error", "Ha introducido texto en un campo númerico");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			request.setAttribute("error", e.getMessage());

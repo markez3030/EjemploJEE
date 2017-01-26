@@ -1,9 +1,10 @@
 <%@ include file="/layout/header.jsp" %>
 
+
 	<section> 
 		<article >
 	<div id="imagenGetPost">
-	 <img src="../img/getPost.jpg" class="img-responsive img-rounded" alt="Cinque Terre"> 
+	 <img src="img/getPost.jpg" class="img-responsive img-rounded" alt="Cinque Terre"> 
 	</div>
 	</article>
 	<article>
@@ -23,10 +24,10 @@
 	<article>
 	<h4>Petición GET a traves de un enlace</h4>
 	<strong><a
-		href="saludo?nombre=Egoitz&apellido1=Marquez&apellido2=Calvo">Llamada
+		href="ejercicioSaludo/saludo?nombre=Egoitz&apellido1=Marquez&apellido2=Calvo">Llamada
 			Get</a></strong></article> <article class="anchuraDivIndex">
 	<h4>Peticion POST realizado con un formulario</h4>
-	<form action="saludo" method="POST">
+	<form action="ejercicioSaludo/saludo" method="POST">
 		<div class="form-group">
 			<label for="Nombre">Nombre</label> <input type="text"
 				class="form-control" name="nombre" id="nombre"
