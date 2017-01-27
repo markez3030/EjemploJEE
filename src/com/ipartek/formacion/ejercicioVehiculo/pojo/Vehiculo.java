@@ -12,11 +12,11 @@ public class Vehiculo implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private static int numero_coches=0;
-	private float id;
+	private int id;
 	private String modelo;
 	private int plazas;
-	private float dimensiones;
-	private float potencia;
+	private int dimensiones;
+	private int potencia;
 
 	public Vehiculo() {
 		super();
@@ -34,6 +34,10 @@ public class Vehiculo implements Serializable {
 		numero_coches=numero_coches+1;
 		this.setId(numero_coches);
 	}
+	
+	
+
+
 
 	public String getModelo() {
 		return modelo;
@@ -54,22 +58,22 @@ public class Vehiculo implements Serializable {
 		this.plazas = plazas;
 	}
 
-	public float getDimensiones() {
+	public int getDimensiones() {
 		return dimensiones;
 	}
 
-	public void setDimensiones(float dimensiones) throws NumeroNegativoException {
+	public void setDimensiones(int dimensiones) throws NumeroNegativoException {
 		if(dimensiones<0)
 			throw new NumeroNegativoException("La dimension que ser mayor que 0");
 		else
 			this.dimensiones = dimensiones;
 	}
 
-	public float getPotencia() {
+	public int getPotencia() {
 		return potencia;
 	}
 
-	public void setPotencia(float potencia) throws NumeroNegativoException {
+	public void setPotencia(int potencia) throws NumeroNegativoException {
 		if(potencia<0)
 			throw new NumeroNegativoException("La potencia tiene que ser mayor que 0");
 		else
@@ -86,11 +90,11 @@ public class Vehiculo implements Serializable {
 	}
 	
 
-	public float getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(float id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

@@ -8,6 +8,11 @@
 	width: 50%;
 }
 
+.anchuraDivVerVehiculo
+{
+	width: 30%;
+}
+
 -->
 Todo enlace que este en una lista en el id about
 #about ul a {
@@ -46,11 +51,35 @@ div#imagenGetPost {
 	margin-top:49px;
 }
 
+#impresionDatos3 {
+   
+	width: 100%;
+	height: 100%;
+
+
+}
+
+#divLog
+{
+	float: right;
+	
+	margin-top:2%;
+}
+
+
 img.imagenUsuario {
 	width: 30px;
 	height: 30px;
 	margin-top: 2%;
 }
+
+.btnAtras{
+	float: right;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+
 
 /*  LOGIN - video */
 

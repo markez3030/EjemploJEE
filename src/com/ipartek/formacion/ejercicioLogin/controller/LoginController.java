@@ -15,8 +15,7 @@ import com.ipartek.formacion.ejercicioLogin.pojo.User;
 /**
  * Servlet implementation class LoginController
  */
-@WebServlet(urlPatterns = { "/login" }, initParams = {
-		@WebInitParam(name = "userNameCredential", value = "admin"),
+@WebServlet(urlPatterns = { "/login" }, initParams = { @WebInitParam(name = "userNameCredential", value = "admin"),
 		@WebInitParam(name = "userPassCredential", value = "123"),
 		@WebInitParam(name = "userImage", value = "http://pre10.deviantart.net/cfcd/th/pre/i/2004/03/2/8/rolling_stone_bart.jpg") })
 public class LoginController extends HttpServlet {
@@ -37,13 +36,14 @@ public class LoginController extends HttpServlet {
 
 			User userValidado = validarUsuario(nombre, pass);
 			if (userValidado == null) {
-				ruta="login.jsp?error=1";
-			}else{
-				session=request.getSession(true);
+				ruta = "login.jsp?error=1";
+			} else {
+				session = request.getSession(true);
 				session.setAttribute("user", nombre);
 				session.setAttribute("pass", pass);
 				session.setAttribute("image", getInitParameter("userImage"));
-				ruta="index.jsp";
+
+				ruta = "index.jsp";
 			}
 		} catch (Exception e) {
 			response.sendRedirect("../error.jsp");
@@ -60,7 +60,7 @@ public class LoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	doGet(request, response);
+		doGet(request, response);
 
 	}
 

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import com.ipartek.formacion.ejercicioVehiculo.pojo.Vehiculo;
 
-
 public class VehiculoDao implements ServiceVehiculo {
 
 	private static VehiculoDao INSTANCE;
@@ -90,4 +89,3 @@ public class VehiculoDao implements ServiceVehiculo {
 	}
 
 }
-

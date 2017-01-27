@@ -40,8 +40,8 @@ public class VehiculoController extends HttpServlet {
 			Vehiculo vehiculo = new Vehiculo();
 			vehiculo.setModelo(request.getParameter("modelo"));
 			vehiculo.setPlazas(Integer.parseInt(request.getParameter("plazas")));
-			vehiculo.setDimensiones(Float.parseFloat(request.getParameter("dimensiones")));
-			vehiculo.setPotencia(Float.parseFloat(request.getParameter("potencia")));
+			vehiculo.setDimensiones(Integer.parseInt(request.getParameter("dimensiones")));
+			vehiculo.setPotencia(Integer.parseInt(request.getParameter("potencia")));
 			request.setAttribute("vehiculo", vehiculo);
 		} catch (NumberFormatException e1) {
 			if(request.getParameter("modelo")!=null)
