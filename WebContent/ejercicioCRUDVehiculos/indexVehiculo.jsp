@@ -3,9 +3,16 @@
 <%@ include file="/layout/header.jsp"%>
 
 <div class="container">
-		<div id="divLog">
-		 <a href="ejercicioLogin/login.jsp?log=2" class="btn btn-info" role="button">Identificate</a>
-		</div>
+	<c:set var="user" value="${sessionScope.user}" />
+	<div id="divLog">
+		<c:if test="${user==null}">
+			<a href="login?log=2" class="btn btn-info" role="button">Identificate</a>
+		</c:if>
+		<c:if test="${user!=null}">
+			<a href="ejercicioLogin/logout?log=2" class="btn btn-danger"
+				role="button">Cerrar Sesion: <strong>${fn:toUpperCase(user)}<strong></a>
+		</c:if>
+	</div>
 	<div class="row">
 		<div id="imagenGetPost">
 			<img src="img/vehiculo.jpg" class="img-responsive img-rounded"
@@ -14,9 +21,7 @@
 		<h2>
 			<u>LISTADO DE COCHES</u>
 		</h2>
-
 		<br>
-		<c:set var="user" value="${sessionScope.user}" />
 		<p>
 			Ejercicio que muestra por pantalla un listado de coches. <br />En
 			este ejercicio vamos a realizar las siguientes operaciones <br>
@@ -27,10 +32,12 @@
 		<article id="impresionDatos">
 
 			<%
-			if (request.getAttribute("exito") != null) {
+				if (request.getAttribute("exito") != null) {
 			%>
 			<div class="alert alert-success" role="alert">${exito}</div>
-	<%} %>
+			<%
+				}
+			%>
 		</article>
 		<c:if test="${user!=null}">
 			<a href="ejercicioCRUDVehiculo/vehiculo?op=3" class="btn btn-success"
@@ -63,7 +70,9 @@
 						<td>${v.potencia}</td>
 						<c:if test="${user!=null }">
 							<th><a href="ejercicioCRUDVehiculo/vehiculo?op=4&id=${v.id}"><i
-									class="fa fa-trash" onclick="return confirm('¿Seguro que quiere eliminar este coche?')" aria-hidden="true"></i></a></th>
+									class="fa fa-trash"
+									onclick="return confirm('¿Seguro que quiere eliminar este coche?')"
+									aria-hidden="true"></i></a></th>
 							<th><a href="ejercicioCRUDVehiculo/vehiculo?op=6&id=${v.id}"><i
 									class="fa fa-pencil-square" aria-hidden="true"></i> </a></th>
 

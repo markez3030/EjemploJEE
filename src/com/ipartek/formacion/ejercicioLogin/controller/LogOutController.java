@@ -31,7 +31,12 @@ public class LogOutController extends HttpServlet {
 		// TODO Auto-generated method stub
 	HttpSession session=request.getSession();
 	session.invalidate();
-	response.sendRedirect("../index.jsp");
+	String ruta="../index.jsp";
+	if(request.getParameter("log").equals("2"))
+	{
+		ruta="../ejercicioCRUDVehiculo/vehiculo";
+	}
+	response.sendRedirect(ruta);
 	}
 
 }

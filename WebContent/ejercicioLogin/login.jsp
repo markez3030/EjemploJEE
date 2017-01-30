@@ -7,8 +7,7 @@
 	</video>
 	<div class="inner-container">
 		<div class="box">
-			<form action="login" method="post" name="Login_Form"
-				>
+			<form action="login" method="post" name="Login_Form">
 				<h3 class="form-signin-heading">Bienvenido!! Introduzca sus
 					datos</h3>
 				<hr class="colorgraph">

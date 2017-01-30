@@ -28,29 +28,27 @@ public class LoginController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		// Venimos desde una pagina que no es login.jsp
 		String ruta = null;
 		HttpSession session;
-		try {
-			String nombre = request.getParameter("user");
-			String pass = request.getParameter("pass");
-
-			User userValidado = validarUsuario(nombre, pass);
-			if (userValidado == null) {
-				ruta = "login.jsp?error=1";
-			} else {
-				session = request.getSession(true);
-				session.setAttribute("user", nombre);
-				session.setAttribute("pass", pass);
-				session.setAttribute("image", getInitParameter("userImage"));
-
-				ruta = "index.jsp";
+		session = request.getSession(true);
+		// Si el usuario es distinto de null-->No venimos desde login.jsp
+		if (request.getParameter("user") == null) {
+			// Miramos que hemos venido desde una pagina que no es login.jsp
+			if (request.getParameter("log") != null) {
+				// Miramos cual es el parametro de log para ponerle la ruta
+				// deseada.
+				// En este caso venimos del 2 osea que hay que redirigir a
+				// ejercicioCRUDVehiculo/vehiculo
+				if (request.getParameter("log").equals("2"))
+					// añadimos a la session desde donde se ha llamado a la
+					// pagina de login para
+					// que vuelva a esa ruta
+					session.setAttribute("redirectLogin", "ejercicioCRUDVehiculo/vehiculo");
 			}
-		} catch (Exception e) {
-			response.sendRedirect("../error.jsp");
-		} finally {
-			response.sendRedirect(ruta);
-
 		}
+		response.sendRedirect("ejercicioLogin/login.jsp");
+
 	}
 
 	/**
@@ -59,11 +57,42 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		//Si venimos desde login.jps (Hemos enviado los datos del usuario)
+		String ruta = null;
+		HttpSession session;
+		session = request.getSession(true);
+		try {
+			String nombre = request.getParameter("user");
+			String pass = request.getParameter("pass");
 
+			User userValidado = validarUsuario(nombre, pass);
+			if (userValidado == null) {
+				ruta = "login.jsp?error=1";
+			} else {
+
+				session.setAttribute("user", nombre);
+				session.setAttribute("pass", pass);
+				session.setAttribute("image", getInitParameter("userImage"));
+				//Si hemos llegado a login.jsp mediante una pagina que no es index.jsp metemos en 
+				//la variable RUTA el atributo redirectLogin(contiene la pagina por la cual se 
+				//accedio a login.jsp)
+				if (session.getAttribute("redirectLogin") != null)
+					ruta = (String) session.getAttribute("redirectLogin");
+				else
+					ruta = "index.jsp";
+			}
+		} catch (
+
+		Exception e) {
+			response.sendRedirect("../error.jsp");
+		} finally {
+			response.sendRedirect(ruta);
+
+		}
 	}
 
+	
+	
 	private User validarUsuario(String nombre, String pass) {
 		// TODO Auto-generated method stub
 		User user = null;
