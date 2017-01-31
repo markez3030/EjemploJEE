@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 public class FicheroController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String EXTENSION = ".txt";
-	private static final String PATH = "C:\\Desarrollo\\Workspace\\EjemploJEE\\WebContent\\ficheros\\";
+	public static final String PATH = "C:\\Desarrollo\\Workspace\\EjemploJEE\\WebContent\\ficheros\\";
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -39,14 +39,18 @@ public class FicheroController extends HttpServlet {
 		// TODO Auto-generated method stub
 		BufferedReader br = null;
 		try {
-			br = new BufferedReader(new FileReader(PATH + request.getParameter("nombre2") + EXTENSION));
-
+			br = new BufferedReader(new FileReader(PATH + request.getParameter("nombre2")));
 			// One way of reading the file
-			String contentLine = br.readLine();
-			while (contentLine != null) {
-				contentLine = br.readLine();
+			String contenidoFichero = null;
+			String texto = "";
+			while ((contenidoFichero = br.readLine()) != null) {
+				texto += contenidoFichero;
 			}
-			request.setAttribute("contenidoFichero", contentLine);
+			if (texto.equals("")) {
+				request.setAttribute("errorLectura", "El fichero esta vacio, no se puede imprimir nada");
+			} else {
+				request.setAttribute("texto", texto);
+			}
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		} finally {

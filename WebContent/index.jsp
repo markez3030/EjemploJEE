@@ -28,7 +28,10 @@
 			href="ejercicioCRUDVehiculo/vehiculo">8.-CRUD vehiculo</a></li>
 		<li class="list-group-item list-group-item-success"><a
 			href="ejercicioFichero/accionesFichero.jsp"><strong>9.-Ejercicio
-					Fichero&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Ejercicio en el que introduces un texto y añades ese texto a un fihcero)</strong></a></li>
+					Fichero&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Ejercicio en el que
+					introduces un texto y añades ese texto a un fihcero)</strong></a></li>
+		<li class="list-group-item list-group-item-info"><a
+			href="ejercicioCRUDVehiculoFichero/vehiculo"><strong>10.-CRUD vehiculo fichero</strong></a></li>
 	</ul>
 </div>
 <%@ include file="/layout/footer.jsp"%>

@@ -1,9 +1,12 @@
+<%@page
+	import="com.ipartek.formacion.ejercicioFichero.controller.FicheroController"%>
+<%@page import="java.io.File"%>
 <%@ include file="/layout/header.jsp"%>
 
 <section>
 	<article>
 		<div id="imagenGetPost">
-			<img src="img/vehiculo.jpg" class="img-responsive img-rounded"
+			<img src="img/fichero.jpg" class="img-responsive img-rounded"
 				alt="Cinque Terre">
 		</div>
 	</article>
@@ -22,7 +25,6 @@
 			Mapping del Servlet:<b>/ejercicioFichero/fichero</b><br />
 		</p>
 	</article>
-
 	<article id="impresionDatos">
 		<%
 			if (request.getAttribute("error") != null) {
@@ -43,6 +45,9 @@
 		%>
 	</article>
 	<article class="anchuraDivIndex">
+		<br>
+	<p>ESCRIBIR EN FICHERO</p>
+	<hr>
 		<form action="ejercicioFichero/fichero" method="POST">
 			<div class="form-group">
 				<label for="nombre">Nombre fichero:</label> <input type="text"
@@ -58,28 +63,62 @@
 		</form>
 	</article>
 
-	<form action="ejercicioFichero/fichero" method="GET">
+
+	<article>
+		<p>LEER DEL FICHERO</p>
+		<hr>
+
+
+		<ul>
+			<%
+				//Buscar ficheros en PATH
+				File ficheros = new File(FicheroController.PATH);
+				File[] files = ficheros.listFiles();
+				if (files.length > 0) {
+					File f = null;
+					for (int i = 0; i < files.length; i++) {
+						f = files[i];
+						if (!f.isDirectory()) {
+			%>
+			<li><a href="ejercicioFichero/fichero?nombre2=<%=f.getName()%>"><%=f.getName()%></a>
+				(<%=f.length()%> bytes)</li>
+			<%
+				} //end if
+					} //end for
+				} else {
+					out.print("<li>No existen ficheros creados todavia!!!</li>");
+				}
+			%>
+		</ul>
+	</article>
+	<br>
+	<br>
+
+	<c:if test="${texto!=null}">
 		<div class="form-group">
-			<label for="nombre2">Nombre fichero:</label> <input type="text"
-				class="form-control" size="15" name="nombre2" id="nombre2"
-				placeholder="Nombre fichero sin extension" required autofocus>
+			<label for="contenido">Contenido</label>
+			<textarea class="form-control" rows="5" name="contenido"
+				id="contenido" readonly>${texto}</textarea>
 		</div>
-		<button type="submit" class="btn btn-primary">Leer fichero</button>
-	</form>
+	</c:if>
+	<%
+		if (request.getAttribute("errorLectura") != null) {
+	%>
+	<div class="alert alert-warning alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert"
+			aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+		<strong>Error!</strong>${errorLectura}
+	</div>
+	<%
+		}
+	%>
+
 	<div class="btnAtras">
 		<a href="index.jsp"><i class="fa fa-chevron-circle-left fa-5x"
 			title="Atras" aria-hidden="true"></i> </a>
 	</div>
-
-	<c:if test="${contenidoFichero!=null}">
-	<div class="form-group">
-		<label for="contenido">Fichero</label>
-		<textarea class="form-control" rows="5" name="contenido"
-			id="contenido">${contenidoFichero}</textarea>
-	</div>
-	</c:if>
-
-
 </section>
 
 <%@ include file="/layout/footer.jsp"%>

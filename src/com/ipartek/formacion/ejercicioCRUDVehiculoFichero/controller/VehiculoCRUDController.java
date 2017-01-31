@@ -1,4 +1,4 @@
-package com.ipartek.formacion.ejercicioCRUDVehiculo.controller;
+package com.ipartek.formacion.ejercicioCRUDVehiculoFichero.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,15 +13,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.ipartek.formacion.ejercicioVehiculo.pojo.Vehiculo;
 import com.ipartek.formacion.ejercicioVehiculo.services.ServiceVehiculo;
 import com.ipartek.formacion.ejercicioVehiculo.services.VehiculoDao;
+import com.ipartek.formacion.ejercicioVehiculo.services.VehiculoServiceObjectStream;
 
 /**
  * Servlet implementation class VehiculoController
  */
-@WebServlet("/ejercicioCRUDVehiculo/vehiculo")
+@WebServlet("/ejercicioCRUDVehiculoFichero/vehiculo")
 public class VehiculoCRUDController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	private static ServiceVehiculo service;
+	private static VehiculoServiceObjectStream service;
 	public static final String OP_LISTAR = "1";
 
 	public static final String OP_MOSTRAR_ADD_COCHE = "3";
@@ -34,7 +35,7 @@ public class VehiculoCRUDController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
 		super.init(config);
-		service = VehiculoDao.getInstance();
+		service = VehiculoServiceObjectStream.getInstance();
 
 	}
 
@@ -51,9 +52,10 @@ public class VehiculoCRUDController extends HttpServlet {
 			throws ServletException, IOException {
 		String ruta = "indexVehiculo.jsp";
 		String op = request.getParameter("op");
+		ArrayList<Vehiculo> list=null;
 		if (op == null || op.equals(OP_LISTAR)) {
 			op = OP_LISTAR;
-			ArrayList<Vehiculo> list = service.getAll();
+			list = service.getAll();
 			request.setAttribute("vehiculos", list);
 		}
 		switch (op) {
@@ -61,13 +63,14 @@ public class VehiculoCRUDController extends HttpServlet {
 			ruta = "añadirVehiculo.jsp";
 			break;
 		case OP_REMOVE_COCHE:
-			ArrayList<Vehiculo> list = service.getAll();
+			list = service.getAll();
 			request.setAttribute("vehiculos", list);
 			service.removeVehiculo(Integer.parseInt(request.getParameter("id")));
 			break;
 		case OP_ADD_COCHE:
-			ArrayList<Vehiculo> list1 = service.getAll();
-			request.setAttribute("vehiculos", list1);
+			//coger todos los coches
+			list = service.getAll();
+			request.setAttribute("vehiculos", list);
 			Vehiculo v2 = new Vehiculo(request.getParameter("modelo"));
 			try {
 				v2.setPlazas(Integer.parseInt(request.getParameter("plazas")));
@@ -92,8 +95,8 @@ public class VehiculoCRUDController extends HttpServlet {
 			ruta = "modificarVehiculo.jsp";
 			break;
 		case OP_SET_COCHE:
-			ArrayList<Vehiculo> list2 = service.getAll();
-			request.setAttribute("vehiculos", list2);
+			list = service.getAll();
+			request.setAttribute("vehiculos", list);
 			try {
 				Vehiculo v3 = new Vehiculo(request.getParameter("modelo"));
 				v3.setId(Integer.parseInt(request.getParameter("id")));
@@ -120,7 +123,7 @@ public class VehiculoCRUDController extends HttpServlet {
 		default:
 			break;
 		}
-		request.getRequestDispatcher("/ejercicioCRUDVehiculos/" + ruta).forward(request, response);
+		request.getRequestDispatcher("/ejercicioCRUDVehiculosFichero/" + ruta).forward(request, response);
 	}
 
 	/**
