@@ -63,17 +63,17 @@
 			<tbody>
 				<c:forEach var="v" items="${vehiculos}">
 					<tr>
-						<td><a href="ejercicioCRUDVehiculo/vehiculo?op=6&id=${v.id}">${v.id}</a></td>
+						<td><a href="ejercicioCRUDVehiculoFichero/vehiculo?op=6&id=${v.id}">${v.id}</a></td>
 						<td>${v.modelo}</td>
 						<td>${v.plazas}</td>
 						<td>${v.dimensiones}</td>
 						<td>${v.potencia}</td>
 						<c:if test="${user!=null }">
-							<th><a href="ejercicioCRUDVehiculo/vehiculo?op=4&id=${v.id}"><i
+							<th><a href="ejercicioCRUDVehiculoFichero/vehiculo?op=4&id=${v.id}"><i
 									class="fa fa-trash"
 									onclick="return confirm('¿Seguro que quiere eliminar este coche?')"
 									aria-hidden="true"></i></a></th>
-							<th><a href="ejercicioCRUDVehiculo/vehiculo?op=6&id=${v.id}"><i
+							<th><a href="ejercicioCRUDVehiculoFichero/vehiculo?op=6&id=${v.id}"><i
 									class="fa fa-pencil-square" aria-hidden="true"></i> </a></th>
 
 						</c:if>

@@ -175,7 +175,6 @@ public class VehiculoServiceObjectStream implements ServiceVehiculo {
 	public boolean createVehiculo(Vehiculo v) {
 		boolean resul = false;
 		archivo.delete();
-		v.setId(vehiculos.size() + 1);
 		vehiculos.add(v);
 
 		try {

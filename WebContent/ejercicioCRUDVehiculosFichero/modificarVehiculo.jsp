@@ -17,7 +17,7 @@
 	<c:set var="v" value="${vehiculoDetalle}"/>
 
 	<article class="anchuraDivVerVehiculo">
-		<form action="ejercicioCRUDVehiculo/vehiculo?op=7" method="POST">
+		<form action="ejercicioCRUDVehiculoFichero/vehiculo?op=7" method="POST">
 		<div class="form-group">
 			<label for="modelo">Identificador</label> <input type="text"
 				class="form-control" size="15" name="id" id="id"
