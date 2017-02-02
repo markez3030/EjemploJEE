@@ -6,10 +6,10 @@
 	<c:set var="user" value="${sessionScope.user}" />
 	<div id="divLog">
 		<c:if test="${user==null}">
-			<a href="login?log=2" class="btn btn-info" role="button">Identificate</a>
+			<a href="login?log=3" class="btn btn-info" role="button">Identificate</a>
 		</c:if>
 		<c:if test="${user!=null}">
-			<a href="ejercicioLogin/logout?log=2" class="btn btn-danger"
+			<a href="ejercicioLogin/logout?log=3" class="btn btn-danger"
 				role="button">Cerrar Sesion: <strong>${fn:toUpperCase(user)}<strong></a>
 		</c:if>
 	</div>

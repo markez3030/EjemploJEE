@@ -35,14 +35,14 @@ public class VehiculoServiceObjectStream implements ServiceVehiculo {
 			createInstance();
 			chekear();
 		}
+		
 		return INSTANCE;
 	}
 
 	public static void chekear() {
-
 		try {
 			if (archivo.exists()) {
-
+				Vehiculo.setNumero_coches(vehiculos.size());
 			} else {
 
 				File f2 = new File(PATH_DIRECTORIO);
@@ -86,11 +86,16 @@ public class VehiculoServiceObjectStream implements ServiceVehiculo {
 			FileInputStream fis = new FileInputStream(PATH);
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			Object objeto;
-
+			int id = 0;
 			while ((objeto = ois.readObject()) != null) {
-				vehiculos.add((Vehiculo) objeto);
+				Vehiculo v=(Vehiculo)objeto;
+				vehiculos.add(v);
+				if(id<=v.getId())
+				{
+					id=v.getId();
+				}
 			}
-
+				Vehiculo.setNumero_coches(id);
 			ois.close();
 
 		} catch (IOException e) {
@@ -140,14 +145,11 @@ public class VehiculoServiceObjectStream implements ServiceVehiculo {
 		boolean resul = false;
 		for (Vehiculo v : vehiculos) {
 			if (v.getId() == id) {
-
 				archivo.delete();
 				vehiculos.remove(v);
-
 				escribir();
 				resul = true;
 				break;
-
 			}
 		}
 
@@ -176,13 +178,11 @@ public class VehiculoServiceObjectStream implements ServiceVehiculo {
 		boolean resul = false;
 		archivo.delete();
 		vehiculos.add(v);
-
 		try {
 
 			archivo = new File(PATH);
 			FileOutputStream out = new FileOutputStream(PATH);
 			ObjectOutputStream oout = new ObjectOutputStream(out);
-
 			for (Vehiculo v1 : vehiculos) {
 				oout.writeObject(v1);
 			}

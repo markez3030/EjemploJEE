@@ -32,10 +32,18 @@ public class LogOutController extends HttpServlet {
 	HttpSession session=request.getSession();
 	session.invalidate();
 	String ruta="../index.jsp";
-	if(request.getParameter("log").equals("2"))
+	if(request.getParameter("log")!=null)
 	{
-		ruta="../ejercicioCRUDVehiculo/vehiculo";
+		if(request.getParameter("log").equals("2"))
+		{
+			ruta="../ejercicioCRUDVehiculo/vehiculo";
+		}
+		if(request.getParameter("log").equals("3"))
+		{
+			ruta="../ejercicioCRUDVehiculoFichero/vehiculo";
+		}
 	}
+	
 	response.sendRedirect(ruta);
 	}
 

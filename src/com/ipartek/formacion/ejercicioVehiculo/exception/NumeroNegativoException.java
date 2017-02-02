@@ -1,6 +1,6 @@
 package com.ipartek.formacion.ejercicioVehiculo.exception;
 
-public class NumeroNegativoException extends Exception {
+public class NumeroNegativoException extends RuntimeException {
 
 	/**
 	 * 
@@ -16,4 +16,6 @@ public class NumeroNegativoException extends Exception {
 		// TODO Auto-generated method stub
 		return super.getMessage();
 	}
+	
+
 }
