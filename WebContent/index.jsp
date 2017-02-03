@@ -31,9 +31,14 @@
 					Fichero&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Ejercicio en el que
 					introduces un texto y añades ese texto a un fihcero)</strong></a></li>
 		<li class="list-group-item list-group-item-info"><a
-			href="ejercicioCRUDVehiculoFichero/vehiculo"><strong>10.-CRUD vehiculo fichero</strong></a></li>
-	
-	
+			href="ejercicioCRUDVehiculoFichero/vehiculo"><strong>10.-CRUD
+					vehiculo fichero</strong></a></li>
+		<li class="list-group-item list-group-item-warning"><a
+			href="ejercicioVehiculoBBDD/vehiculo"><strong>10.-CRUD
+					coches BBDD</strong></a></li>
+		<li class="list-group-item list-group-item-danger"><a
+			href="ejercicioVolcarDatos/volcarDatos">8.-Volcar datos de fichero a BBDD0</a></li>
+
 	</ul>
 </div>
 <%@ include file="/layout/footer.jsp"%>
