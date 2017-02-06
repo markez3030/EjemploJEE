@@ -3,7 +3,9 @@ package com.ipartek.formacion.utilidades;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class VehiculoDB extends AccesoBD {
+import com.ipartek.formacion.BBDD.DataBaseConnectionImp;
+
+public class VehiculoDB extends DataBaseConnectionImp {
 
 	
 	
@@ -22,6 +24,13 @@ public class VehiculoDB extends AccesoBD {
 		statement.setInt(1, id);
 		statement.executeUpdate();
 
+	}
+	
+	public static ResultSet selectAll(String sql) throws SQLException {
+		// TODO Auto-generated method stub
+		statement =  con.prepareStatement(sql);
+		ResultSet rs = statement.executeQuery();
+		return rs;
 	}
 	
 	public static ResultSet buscarUnCoche(String sql,int id) throws SQLException {

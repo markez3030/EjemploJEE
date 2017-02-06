@@ -2,6 +2,7 @@ package com.ipartek.formacion.ejercicioVolcarFicheroBBDD.pojo;
 
 public class Persona {
 	
+	private int id;
 	private String nombre;
 	private String apellido1;
 	private String apellido2;
@@ -12,8 +13,9 @@ public class Persona {
 	private String descripcionFallido;
 	
 	
-	public Persona(String nombre, String apellido1, String apellido2, int edad, String email, String dni, String tipo) {
+	public Persona(int id,String nombre, String apellido1, String apellido2, int edad, String email, String dni, String tipo) {
 		super();
+		this.setId(id);
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
@@ -23,8 +25,9 @@ public class Persona {
 		this.tipo = tipo;
 	}
 	
-	public Persona(String nombre, String apellido1, String apellido2, int edad, String email, String dni, String tipo,String descripcion) {
+	public Persona(int id,String nombre, String apellido1, String apellido2, int edad, String email, String dni, String tipo,String descripcion) {
 		super();
+		this.setId(id);
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
@@ -129,6 +132,14 @@ public class Persona {
 
 	public void setDescripcionFallido(String descripcionFallido) {
 		this.descripcionFallido = descripcionFallido;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	

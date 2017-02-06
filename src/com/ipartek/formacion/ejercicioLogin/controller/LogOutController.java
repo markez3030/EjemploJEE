@@ -46,6 +46,10 @@ public class LogOutController extends HttpServlet {
 		{
 			ruta="../ejercicioVehiculoBBDD/vehiculo";
 		}
+		if(request.getParameter("log").equals("5"))
+		{
+			ruta="../ejercicioVolcarDatos/volcarDatos";
+		}
 	}
 	
 	response.sendRedirect(ruta);

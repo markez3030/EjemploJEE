@@ -1,8 +1,11 @@
 package com.ipartek.formacion.utilidades;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class PersonasBD extends AccesoBD {
+import com.ipartek.formacion.BBDD.DataBaseConnectionImp;
+
+public class PersonasBD extends DataBaseConnectionImp {
 	
 	
 	public static void insertarPersona(String sql,String nombre,String ape1,String ape2,
@@ -16,6 +19,20 @@ public class PersonasBD extends AccesoBD {
 		statement.setString(6, dni);
 		statement.setString(7, puesto);
 		statement.executeUpdate();
+	}
+
+	public static ResultSet selectAll(String sql) throws SQLException {
+		// TODO Auto-generated method stub
+		statement =  con.prepareStatement(sql);
+		ResultSet rs = statement.executeQuery();
+		return rs;
+	}
+
+	public static int  deleteAll() throws SQLException {
+		statement = con.prepareStatement("DELETE FROM persona WHERE 1");
+		int row= statement.executeUpdate();
+		return row;
+
 	}
 
 }

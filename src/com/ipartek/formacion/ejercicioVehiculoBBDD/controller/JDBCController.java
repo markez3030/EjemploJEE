@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ipartek.formacion.BBDD.DataBaseConnectionImp;
 import com.ipartek.formacion.ejercicioVehiculo.pojo.Vehiculo;
 import com.ipartek.formacion.utilidades.VehiculoDB;
 
@@ -48,7 +49,7 @@ public class JDBCController extends HttpServlet {
 		String op = request.getParameter("op");
 		ArrayList<Vehiculo> listV = new ArrayList<Vehiculo>();
 		try {
-			VehiculoDB.establecerConexion("concesionario", "root", "");
+			DataBaseConnectionImp.establecerConexion("concesionario", "root", "");
 			if (op == null || op.equals(OP_LISTAR)) {
 				op = OP_LISTAR;
 				listV = listar();
@@ -110,7 +111,7 @@ public class JDBCController extends HttpServlet {
 			default:
 				break;
 			}
-			VehiculoDB.cerrarConexion();
+			DataBaseConnectionImp.cerrarConexion();
 		} catch (ClassNotFoundException e3) {
 			// TODO Auto-generated catch block
 			request.setAttribute("error", "No se ha podido realizar la conexion a la BBDD");
@@ -135,7 +136,7 @@ public class JDBCController extends HttpServlet {
 		ArrayList<Vehiculo> listV = new ArrayList<Vehiculo>();
 		ResultSet rs;
 		try {
-			rs = VehiculoDB.lanzarSelect("SELECT * FROM vehiculo");
+			rs = VehiculoDB.selectAll("SELECT * FROM vehiculo");
 			Vehiculo v;
 			while (rs.next()) {
 				v = new Vehiculo();

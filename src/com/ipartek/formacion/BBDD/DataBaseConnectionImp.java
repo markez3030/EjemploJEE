@@ -1,4 +1,5 @@
-package com.ipartek.formacion.utilidades;
+package com.ipartek.formacion.BBDD;
+
 
 
 
@@ -8,7 +9,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class AccesoBD {
+import com.ipartek.formacion.BBDD.DataBaseConnection;
+
+public class DataBaseConnectionImp implements DataBaseConnection {
 	static final int MYSQL = 1;
 	static final int ACCESS = 2;
 	static final int ORACLE = 3;
@@ -69,34 +72,14 @@ public class AccesoBD {
 			con.close();
 	}
 
-	public static ResultSet lanzarSelect(String sql) throws SQLException {
-		ResultSet rs = null;
-		statement =  con.prepareStatement(sql);
-		rs = statement.executeQuery();
-		return rs;
-
-	}
-
-	public static void insertarQuery(String sql) throws SQLException {
-		statement = con.prepareStatement(sql);
-		statement.executeUpdate();
-	}
-
-	public static void modificarQuery(String sql) throws SQLException {
-		// TODO Auto-generated method stub
-		statement = con.prepareStatement(sql);
-		statement.executeUpdate();
-	}
-
-	public static void borrarQuery(String sql) throws SQLException {
-		// TODO Auto-generated method stub
-		statement = con.prepareStatement(sql);
-		statement.executeUpdate();
-	}
-
 
 	public static Connection getCon() {
 		return con;
 	}
+
+
+
+
+
 
 }

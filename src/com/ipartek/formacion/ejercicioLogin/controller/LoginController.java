@@ -55,6 +55,11 @@ public class LoginController extends HttpServlet {
 					// pagina de login para
 					// que vuelva a esa ruta
 					session.setAttribute("redirectLogin", "ejercicioVehiculoBBDD/vehiculo");
+				if (request.getParameter("log").equals("5"))
+					// añadimos a la session desde donde se ha llamado a la
+					// pagina de login para
+					// que vuelva a esa ruta
+					session.setAttribute("redirectLogin", "ejercicioVolcarDatos/volcarDatos");
 			}
 		}	
 		response.sendRedirect("ejercicioLogin/login.jsp");
